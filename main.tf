@@ -44,6 +44,9 @@ resource "azurerm_app_service_plan" "plan" {
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
 
+  kind     = var.service_plan.kind
+  reserved = var.service_plan.reserved
+
   sku {
     size = var.service_plan.sku.size
     tier = var.service_plan.sku.tier
